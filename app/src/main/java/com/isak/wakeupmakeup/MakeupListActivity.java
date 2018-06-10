@@ -10,9 +10,12 @@ import android.widget.Toast;
 import android.widget.AdapterView;
 import android.view.View;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MakeupListActivity extends AppCompatActivity {
-    private TextView mMakeupTextView;
-    private ListView mListView;
+    @BindView(R.id.makeupTextView) TextView mMakeupTextView;
+    @BindView(R.id.listView) ListView mListView;
     private String[] brands = new String[] {"Mac","Wet n Wild","Maybeline", "NYX", "l'Oreal",
             "essie", "Clinique", "Revlon", "Annabelle", "Milani"};
 
@@ -20,9 +23,8 @@ public class MakeupListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_makeup_list);
+        ButterKnife.bind(this);
 
-        mListView = (ListView) findViewById(R.id.listView);
-        mMakeupTextView = (TextView) findViewById(R.id.makeupTextView);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, brands);
         mListView.setAdapter(adapter);
