@@ -26,6 +26,14 @@ public class MakeupListActivity extends AppCompatActivity {
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, brands);
         mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String brand = ((TextView)view).getText().toString();
+                Toast.makeText(MakeupListActivity.this, brand, Toast.LENGTH_LONG).show();
+            }
+        });
         Intent intent = getIntent();
         String makeup = intent.getStringExtra("makeup");
         mMakeupTextView.setText("List of brands with your choice of : " + makeup);
