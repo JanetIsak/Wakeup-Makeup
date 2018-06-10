@@ -8,22 +8,25 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Typeface;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mSearchButton;
-    private TextView mAppNameTextView;
+    @BindView(R.id.searchButton) Button mSearchButton;
+    @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+
         Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/SeasideResortNF/SEASRN__.ttf");
         mAppNameTextView.setTypeface(ostrichFont);
 
-        mSearchButton = (Button) findViewById(R.id.searchButton);
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

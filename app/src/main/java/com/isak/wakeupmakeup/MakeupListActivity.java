@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+import android.widget.AdapterView;
+import android.view.View;
 
 public class MakeupListActivity extends AppCompatActivity {
     private ListView mListView;
@@ -16,7 +19,10 @@ public class MakeupListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_makeup_list);
 
         mListView = (ListView) findViewById(R.id.listView);
+
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, brands);
         mListView.setAdapter(adapter);
+
+
     }
 }
