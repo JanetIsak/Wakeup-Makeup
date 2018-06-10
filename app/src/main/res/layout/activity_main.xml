@@ -36,12 +36,12 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/locationEditText"
+        android:id="@+id/makeupEditText"
         android:background="@color/colorTextIcons"
         android:layout_above="@+id/searchButton"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
-        android:hint="Enter Brand Name"
+        android:hint="Makeup Name"
         android:layout_centerHorizontal="true" />
 
 
