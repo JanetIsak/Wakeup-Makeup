@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String makeup = mMakeupEditText.getText().toString();
-                Log.d(TAG, makeup);
                 Intent intent = new Intent(MainActivity.this, MakeupListActivity.class);
+                intent.putExtra("makeup", makeup);
                 startActivity(intent);
             }
         });
